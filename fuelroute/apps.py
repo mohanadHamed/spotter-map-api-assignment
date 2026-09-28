@@ -1,0 +1,7 @@
+from django.apps import AppConfig
+
+
+class FuelrouteConfig(AppConfig):
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "fuelroute"
+    verbose_name = "Fuel route planner"

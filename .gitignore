@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Django
+db.sqlite3
+db.sqlite3-journal
+/staticfiles/
+
+# Data prep downloads (large, re-downloadable)
+data/cache/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
