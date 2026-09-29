@@ -137,6 +137,9 @@ class RoutePlanApiTests(TestCase):
         self.assertContains(response, "leaflet")
         self.assertContains(response, "Station 2")
         self.assertContains(response, 'id="route-geojson"')
+        # Tiles must be requested with a Referer, or OpenStreetMap blocks them.
+        self.assertEqual(response["Referrer-Policy"], "strict-origin-when-cross-origin")
+        self.assertContains(response, 'referrerPolicy: "strict-origin-when-cross-origin"')
 
     def test_map_page_error(self):
         response = self.client.get(reverse("route-map"), {"start": "Chicago, IL"})

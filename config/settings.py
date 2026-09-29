@@ -108,6 +108,10 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
+# Django defaults to "same-origin", which strips the Referer from cross-site requests.
+# OpenStreetMap's tile servers block tile requests without a Referer, so use the browser default.
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
+
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
